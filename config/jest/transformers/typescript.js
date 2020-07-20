@@ -3,25 +3,25 @@ const crypto = require("crypto");
 
 const babelTransformer = require("./javascript");
 
-const tsConfig = require("../../../tsconfig.json");
+// const tsConfig = require("../../../tsconfig.json");
 
-// const tsConfig = {
-//   target: "ES2016",
-//   module: "es2015",
-//   lib: ["dom", "es2015", "es2016", "es2017"],
-//   jsx: "react",
-//   declaration: true,
-//   outDir: "build/",
-//   importHelpers: true,
-//   noImplicitAny: true,
-//   strictNullChecks: true,
-//   noUnusedLocals: true,
-//   noUnusedParameters: true,
-//   moduleResolution: "node",
-//   allowSyntheticDefaultImports: true,
-//   esModuleInterop: true,
-//   experimentalDecorators: true,
-// };
+const tsConfig = {
+  target: "ES2016",
+  module: "es2015",
+  lib: ["dom", "es2015", "es2016", "es2017"],
+  jsx: "react",
+  declaration: true,
+  outDir: "build/",
+  importHelpers: true,
+  noImplicitAny: true,
+  strictNullChecks: true,
+  noUnusedLocals: true,
+  noUnusedParameters: true,
+  moduleResolution: "node",
+  allowSyntheticDefaultImports: true,
+  esModuleInterop: true,
+  experimentalDecorators: true,
+};
 
 module.exports = {
   getCacheKey(src, path, configString) {
