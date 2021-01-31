@@ -37,7 +37,9 @@
     "rollup-plugin-uglify": "^6.0.4",
     "typescript": "^3.9.6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "3.0.0"
+  },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   }
