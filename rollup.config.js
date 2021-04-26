@@ -17,6 +17,7 @@ export default [
         // exports: "named",
         file: `esm/${name}.jsx`,
         format: "esm",
+        publicPath: '/'
       },
     ],
     plugins: [
@@ -31,9 +32,9 @@ export default [
         extensions: ['.js', '.ts', '.jsx','tsx'],
       }),
       url({
-        limit: 10 * 1024, // inline files < 10k, copy files > 10k
-        // include: ["**/*.svg"], // defaults to .svg, .png, .jpg and .gif files
-        emitFiles: true // defaults to true
+        limit: 20 * 1024, // inline files < 10k, copy files > 10k
+        // include: ["**/*.png"], // defaults to .svg, .png, .jpg and .gif files
+        emitFiles: false // defaults to true
       }),
       // terser(),
       postcss({

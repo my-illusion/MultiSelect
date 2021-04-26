@@ -1,8 +1,9 @@
 {
   "name": "multi-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "framework for library  develop",
   "main": "index.js",
+  "module": "esm/multi-select.jsx",
   "scripts": {
     "build": "rollup --config",
     "test": "jest --config ./config/jest/config.json --no-cache"
