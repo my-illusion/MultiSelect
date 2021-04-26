@@ -1,0 +1,137 @@
+@import "./base.less";
+.multi-select {
+  display: flex;
+  align-items: center;
+
+  &-name {
+    color: @color-grey1;
+    font-size: 12px;
+    margin-right: 12px;
+  }
+
+  &-value {
+    height: 32px;
+    line-height: 30px;
+    padding: 0 24px 0 11px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 160px;
+
+    &:hover,
+    &:focus {
+      border-color: #559cfa;
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    right: 11px;
+    color: rgba(0, 0, 0, 0.25);
+
+    svg {
+      transition: transform 0.3s;
+      font-size: 14px;
+    }
+
+    &--rotate {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-placeholder {
+    color: @t3;
+  }
+
+  .ant-dropdown {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &-dropdown {
+    background-color: #fff;
+    width: 280px;
+
+    &-search-wrap {
+      border-bottom: 1px solid #f0f1f4;
+    }
+
+    &-search {
+      border: none;
+
+      .ant-input {
+        border-color: transparent;
+      }
+    }
+
+    &-list {
+      max-height: 300px;
+      overflow: auto;
+      margin: 4px 0;
+    }
+
+    &-footer {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-top: 1px solid #f0f1f4;
+    }
+  }
+
+  &-item {
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @primary-4;
+    }
+
+    &--selected {
+      background-color: @color-grey6;
+    }
+
+    &--selected & {
+      &-name {
+        color: @primary;
+      }
+    }
+
+    &-name {
+      margin: 0 8px;
+      color: @text1;
+      font-size: 14px;
+      line-height: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .game-icon {
+      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      margin-left: 5px;
+      vertical-align: middle;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

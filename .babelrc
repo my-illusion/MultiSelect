@@ -4,7 +4,8 @@
         "modules": false,
         "useBuiltIns": "usage",
         "corejs": "3.0.0"
-      }]
+      }],
+      ["@babel/preset-react"]
     ],
     "plugins": [
         "@babel/plugin-proposal-optional-chaining"

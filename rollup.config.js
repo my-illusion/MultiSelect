@@ -2,21 +2,20 @@ import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import { terser } from "rollup-plugin-terser";
+import url from "rollup-plugin-url"
+import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 import { name } from "./package.json";
 
 export default [
   {
-    input: "build/index.js",
+    input: "src/index.jsx",
     output: [
       {
-        exports: "named",
-        file: `lib/${name}.cjs.js`,
-        format: "cjs",
-      },
-      {
-        exports: "named",
-        file: `es/${name}.es.js`,
+        // exports: "named",
+        file: `es/${name}.jsx`,
         format: "es",
       },
     ],
@@ -29,8 +28,20 @@ export default [
       }),
       babel({
         exclude: "node_modules/**",
+        extensions: ['.js', '.ts', '.jsx','tsx'],
+      }),
+      url({
+        limit: 10 * 1024, // inline files < 10k, copy files > 10k
+        // include: ["**/*.svg"], // defaults to .svg, .png, .jpg and .gif files
+        emitFiles: true // defaults to true
       }),
       terser(),
+      postcss({
+        plugins: [autoprefixer, cssnano],
+        extensions: ['.less', '.css'],
+        use: ['less'],
+        extract: 'multi-select.css', // 输出路径
+      }),
     ],
   },
 ];
