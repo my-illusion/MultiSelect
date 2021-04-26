@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Dropdown, Input } from 'antd'
+import React, { useState, useEffect, useMemo } from 'react'
+import { Button, Dropdown, Input, Checkbox  } from 'antd'
 import { DownOutlined, SearchOutlined } from '@ant-design/icons'
 import cls from 'classnames'
 
@@ -190,13 +190,13 @@ const MultiSelector = ({
         <div className="multi-select-dropdown" style={{ width: width }}>
         {search ? (
             <div className="multi-select-dropdown-search-wrap">
-            {/* <Input
+            <Input
                 className="multi-select-dropdown-search"
                 placeholder="搜索"
                 value={keyword}
                 prefix={<SearchOutlined />}
                 onChange={handleKeywordChange}
-            /> */}
+            />
             </div>
         ) : null}
 

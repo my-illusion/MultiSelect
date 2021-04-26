@@ -35,7 +35,7 @@ export default [
         // include: ["**/*.svg"], // defaults to .svg, .png, .jpg and .gif files
         emitFiles: true // defaults to true
       }),
-      terser(),
+      // terser(),
       postcss({
         plugins: [autoprefixer, cssnano],
         extensions: ['.less', '.css'],
