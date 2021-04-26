@@ -15,8 +15,8 @@ export default [
     output: [
       {
         // exports: "named",
-        file: `es/${name}.jsx`,
-        format: "es",
+        file: `esm/${name}.jsx`,
+        format: "esm",
       },
     ],
     plugins: [

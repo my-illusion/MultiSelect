@@ -9,7 +9,7 @@ import './index.less';
 
 const Item = ({ name, icon, checked, onClick }) => {
     const onError = function(e) {
-      e.target.src = require('./assets/defaultgame.png');
+    //   e.target.src = require('./assets/defaultgame.png');
     };
   
     return (
@@ -190,13 +190,13 @@ const MultiSelector = ({
         <div className="multi-select-dropdown" style={{ width: width }}>
         {search ? (
             <div className="multi-select-dropdown-search-wrap">
-            <Input
+            {/* <Input
                 className="multi-select-dropdown-search"
                 placeholder="搜索"
                 value={keyword}
                 prefix={<SearchOutlined />}
                 onChange={handleKeywordChange}
-            />
+            /> */}
             </div>
         ) : null}
 
