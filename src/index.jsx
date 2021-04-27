@@ -3,13 +3,15 @@ import { Button, Dropdown, Input, Checkbox  } from 'antd'
 import { DownOutlined, SearchOutlined } from '@ant-design/icons'
 import cls from 'classnames'
 
+import DefaultImage from './assets/defaultgame.png'
+
 import Empty from './components/Empty/index.jsx'
 
 import './index.less';
 
 const Item = ({ name, icon, checked, onClick }) => {
     const onError = function(e) {
-    //   e.target.src = require('./assets/defaultgame.png');
+      e.target.src = DefaultImage;
     };
   
     return (
@@ -54,8 +56,8 @@ const DemoData = [
       key: 4,
       name: '选项4',
     },
-  ];
-  
+];
+
 const MultiSelector = ({
     data = DemoData,
     value,
@@ -111,7 +113,7 @@ const MultiSelector = ({
 
     const handleOK = () => {
         if (onChange) {
-        onChange(selected);
+            onChange(selected);
         }
         close();
     };
@@ -131,7 +133,7 @@ const MultiSelector = ({
 
     useEffect(() => {
         if (!visible) {
-        setSelected(value || []);
+            setSelected(value || []);
         }
     }, [visible]);
 
@@ -172,11 +174,11 @@ const MultiSelector = ({
 
             {filteredList.map(item => (
                 <Item
-                key={item.key}
-                name={item.name}
-                icon={item.icon}
-                checked={isSelected(item.key)}
-                onClick={() => handleSelectedChange(item.key)}
+                    key={item.key}
+                    name={item.name}
+                    icon={item.icon}
+                    checked={isSelected(item.key)}
+                    onClick={() => handleSelectedChange(item.key)}
                 />
             ))}
             </>
@@ -203,21 +205,21 @@ const MultiSelector = ({
         <div className="multi-select-dropdown-list">{renderTaskList()}</div>
         <div className="multi-select-dropdown-footer">
             <Button
-            type="primary"
-            onClick={handleOK}
-            style={width === '120px' ? { padding: '1px 4px' } : {}}
+                type="primary"
+                onClick={handleOK}
+                style={width === '120px' ? { padding: '1px 4px' } : {}}
             >
-            确定
+                确定
             </Button>
             <Button
-            onClick={handleCancel}
-            style={
-                width === '120px'
-                ? { padding: '1px 4px', marginLeft: '8px' }
-                : { marginLeft: '8px' }
-            }
+                onClick={handleCancel}
+                style={
+                    width === '120px'
+                    ? { padding: '1px 4px', marginLeft: '8px' }
+                    : { marginLeft: '8px' }
+                }
             >
-            取消
+                取消
             </Button>
         </div>
         </div>
@@ -225,27 +227,27 @@ const MultiSelector = ({
 
     return (
         <div className="multi-select">
-        <Dropdown
-            overlay={dropDownRender()}
-            visible={visible}
-            onVisibleChange={setVisible}
-            trigger={['click']}
-            getPopupContainer={node => node.parentElement}
-        >
-            <div
-            className="multi-select-value"
-            style={width ? { width: width } : {}}
-            onClick={show}
+            <Dropdown
+                overlay={dropDownRender()}
+                visible={visible}
+                onVisibleChange={setVisible}
+                trigger={['click']}
+                getPopupContainer={node => node.parentElement}
             >
-            {renderLabel()}
-            <DownOutlined
-                className={cls(
-                'multi-select-arrow',
-                visible ? 'multi-select-arrow--rotate' : undefined,
-                )}
-            />
-            </div>
-        </Dropdown>
+                <div
+                    className="multi-select-value"
+                    style={width ? { width } : {}}
+                    onClick={show}
+                >
+                    {renderLabel()}
+                    <DownOutlined
+                        className={cls(
+                            'multi-select-arrow',
+                            visible ? 'multi-select-arrow--rotate' : undefined,
+                        )}
+                    />
+                </div>
+            </Dropdown>
         </div>
     );
 };

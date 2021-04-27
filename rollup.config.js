@@ -1,7 +1,6 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
-import babel from "rollup-plugin-babel";
-import { terser } from "rollup-plugin-terser";
+import babel from "@rollup/plugin-babel";
 import url from "rollup-plugin-url"
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
@@ -14,12 +13,11 @@ export default [
     input: "src/index.jsx",
     output: [
       {
-        // exports: "named",
         file: `esm/${name}.jsx`,
         format: "esm",
-        publicPath: '/'
       },
     ],
+    external: id => id.includes('@babel/runtime'),
     plugins: [
       nodeResolve({
         mainFields: ["module", "main"],
@@ -27,14 +25,10 @@ export default [
       commonjs({
         include: "node_modules/**",
       }),
-      babel({
-        exclude: "node_modules/**",
-        extensions: ['.js', '.ts', '.jsx','tsx'],
-      }),
       url({
         limit: 20 * 1024, // inline files < 10k, copy files > 10k
         // include: ["**/*.png"], // defaults to .svg, .png, .jpg and .gif files
-        emitFiles: false // defaults to true
+        // emitFiles: false // defaults to true
       }),
       // terser(),
       postcss({
@@ -43,6 +37,13 @@ export default [
         use: ['less'],
         extract: 'multi-select.css', // 输出路径
       }),
+      babel({
+        // plugins: ['external-helpers'],
+        // externalHelpers: true,
+        exclude: "node_modules/**",
+        babelHelpers: "runtime",
+        extensions: ['.js', '.ts', '.jsx','tsx'],
+      })
     ],
   },
 ];
