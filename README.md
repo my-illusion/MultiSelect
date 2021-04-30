@@ -13,3 +13,5 @@ yarn add multi-select
 import MultiSelect form 'multi-select'
 import 'multi-select/esm/multi-select.css'
 ```
+
+![Image text](https://github.com/my-illusion/MultiSelect/blob/main/image/select.png)
