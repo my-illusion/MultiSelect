@@ -4,8 +4,12 @@
 
 # usage
 
+```js
 npm install multi-select
 yarn add multi-select
+```
 
+```js
 import MultiSelect form 'multi-select'
 import 'multi-select/esm/multi-select.css'
+```
