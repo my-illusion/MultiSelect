@@ -1,0 +1,112 @@
+/**less 相关常量定义(新版本 v1.0)**/
+//后续各个模块代码的视觉样式以此为准，less文件中的所有变量，来自于此
+//视觉资源文件以此为准
+// http://axure.yixin.im/#/preview?id=409444891494404096&pagename=&ridx=0   密码 74kz   prome web template
+
+//自定义root变量 var 暂不开启
+// :root {
+//     --PC: #2a79ee;
+//     --hoverColor: #f0f8ff;
+//     --light1: #f0f8ff;
+//     --light2: #d1eaff;
+//     --light3: #a8d4ff;
+//     --light4: #80bbff;
+//     --light5: #559cfa;
+//     --light6: #2a79ee;
+//     --dark1: #1a59c7;
+//     --dark2: #0d3ea1;
+//     --dark3: #04277a;
+//     --dark4: #021854;
+// }
+
+//颜色常量（代码中使用）
+
+//白色
+@white: #ffffff;
+//主色（5个颜色级别）
+@primary: #2a79ee; //主色500
+@primary-1: #609bf3; //主色400
+@primary-2: #8ab6f6; //主色300
+@primary-3: #bfd6f9; //主色200
+@primary-4: #e9f1fd; //主色100
+
+//灰度颜色(7个级别)
+@color-grey: #333333;
+@color-grey1: #666666;
+@color-grey2: #999999;
+@color-grey3: #c0c0c0;
+@color-grey4: #d9d9d9;
+@color-grey5: #f2f2f2;
+@color-grey6: #fafafa;
+//辅助用色(3个主，3个辅)，提醒色 antd内置主题相关颜色已修改
+@green_light: #3fb23f; //亮绿
+@green_simple: #f0fbf0; //极浅绿
+@yellow_light: #f4a43c; //亮黄
+@yellow_simple: #fff6e9; //极浅黄
+@red_light: #ff525d; //亮红
+@red_simple: #fff4f2; //极浅红
+
+//图表颜色填充填充列表色值,主要用于如echarts中的color列表
+// 数组拷贝：  ['#4A90E2','#E29D63','#18C2C4','#40B985','#4680BB','#B3B33B','#838FD7','#7FACAC','#6E72B9','#D47E7E']
+@c1: #4a90e2; //图表颜色填充或者描边色
+@c2: #e29d63; //图表颜色填充或者描边色
+@c3: #18c2c4; //图表颜色填充或者描边色
+@c4: #40b985; //图表颜色填充或者描边色
+@c5: #4680bb; //图表颜色填充或者描边色
+@c6: #b3b33b; //图表颜色填充或者描边色
+@c7: #838fd7; //图表颜色填充或者描边色
+@c8: #7facac; //图表颜色填充或者描边色
+@c9: #6e72b9; //图表颜色填充或者描边色
+@c10: #d47e7e; //图表颜色填充或者描边色
+
+//文本用色
+@t1: #333333; //深
+@t2: #666666; //常规默认
+@t3: #999999; //浅色
+@t4: #c1c1c1; //最淡
+@t5: @primary; //蓝色，即采用主色
+@t6: @red_light; //红色,即采用红色辅助色
+
+@weight1: 400; //常规字体粗细
+@weight2: 700; //加粗文本
+
+//标准背景用色
+@grey: #f8f9fa;
+//浅蓝色辅助背景色
+@blueBg: rgb(236, 245, 254);
+//灰色辅助背景色
+@greyBg: #f7f8f9;
+//非全屏区域宽度 按全屏比例计算
+@minWidth: 1280px;
+//内容区宽度
+@contentWidth: 1236px;
+
+//常用阴影
+@shadow: 0 1px 3px 0 #cbd8e5;
+@shadow_hover: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+
+//以下代码兼容旧版less内常量使用，仅做兼容使用，如需迭代，勿用！以上述定义为准
+// 旧版！！！！！！
+@w1: @t2;
+@w2: @t1;
+@w3: #bbd2eb;
+@w4: #e5f4ff;
+@666: @t2;
+@999: @t3;
+@varPC: @primary;
+@light5: @primary-2;
+@text1: #364048;
+
+//常用阴影
+// @shadow:0px 2px 4px 0px rgba(132,135,145,0.2);
+@shadowHover: 0px 2px 20px 0px rgba(104, 114, 114, 0.2);
+@newShadow: 0px 2px 4px 0px rgba(132, 135, 145, 0.1);
+
+//部分颜色（参考）
+@blue: @primary; //主色，用于选中，hover等
+@yellow: @yellow_light;
+@red: @red_light;
+
+@systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+  "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
