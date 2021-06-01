@@ -1,10 +1,10 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "@rollup/plugin-babel";
-import url from "rollup-plugin-url"
-import postcss from 'rollup-plugin-postcss';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
+import url from "rollup-plugin-url";
+import postcss from "rollup-plugin-postcss";
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
 
 import { name } from "./package.json";
 
@@ -17,7 +17,7 @@ export default [
         format: "esm",
       },
     ],
-    external: id => id.includes('@babel/runtime'),
+    external: (id) => id.includes("@babel/runtime"),
     plugins: [
       nodeResolve({
         mainFields: ["module", "main"],
@@ -33,17 +33,17 @@ export default [
       // terser(),
       postcss({
         plugins: [autoprefixer, cssnano],
-        extensions: ['.less', '.css'],
-        use: ['less'],
-        extract: 'multi-select.css', // 输出路径
+        extensions: [".less", ".css"],
+        use: ["less"],
+        extract: "multi-select.css", // 输出路径
       }),
       babel({
         // plugins: ['external-helpers'],
         // externalHelpers: true,
         exclude: "node_modules/**",
         babelHelpers: "runtime",
-        extensions: ['.js', '.ts', '.jsx','tsx'],
-      })
+        extensions: [".js", ".ts", ".jsx", "tsx"],
+      }),
     ],
   },
 ];
